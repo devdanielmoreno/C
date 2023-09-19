@@ -1,0 +1,57 @@
+·malloc() y calloc() son funciones utilizadas para asignar memoria dinámica en C. 
+La diferencia principal radica en que calloc() inicializa el bloque de memoria asignado en ceros, 
+mientras que malloc() no realiza ninguna inicialización. 
+
+
+·recalloc: cambiar el tamaño de un bloque de memoria dinámica
+
+
+·fgets es para leer una linea especifica
+
+
+·gets es para leer todo 
+
+int main() {
+    FILE* archivo = fopen("ejemplo.txt", "r");  // Abre el archivo en modo lectura
+
+    if (archivo != NULL) {
+        int caracter;
+
+        while ((caracter = getc(archivo)) != EOF) {  // Lee caracteres hasta el final del archivo
+            printf("%c", caracter);
+        }
+
+
+·putc es para escribir lo que tu veas en un archivo:
+
+int main() {
+    FILE* archivo = fopen("ejemplo.txt", "w");  // Abre el archivo en modo escritura
+
+    if (archivo != NULL) {
+        int resultado = putc('H', archivo);  // Escribe el carácter 'H' en el archivo
+
+
+·fputs escribe una cadena de caracteres:
+
+    if (fputs(cadena, archivo) != EOF) {  // Escribe la cadena en el archivo
+        fputs("\n", archivo);  // Agrega un carácter de nueva línea
+
+
+·fprintf() para escribir datos con formato en un archivo:
+
+        if (fprintf(archivo, "Número: %d\nDecimal: %.2f\nCadena: %s\n", numero, decimal, cadena) > 0) {
+            printf("Datos escritos correctamente.\n");
+
+·fscanf() para leer datos con formato desde un archivo:
+
+        if (fscanf(archivo, "Número: %d\nDecimal: %f\nCadena: %s\n", &numero, &decimal, cadena) == 3) {
+            printf("Datos leídos correctamente.\n");
+            
+
+·A diferencia de fscanf(), fread() no realiza el análisis del formato, sino que lee los datos en bruto
+
+        if (fread(&datos, sizeof(Datos), 1, archivo) == 1) {
+            printf("Datos leídos correctamente:\n");
+            printf("Número: %d\n", datos.numero);
+            printf("Decimal: %.2f\n", datos.decimal);
+            printf("Cadena: %s\n", datos.cadena);
