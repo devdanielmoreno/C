@@ -1,0 +1,8 @@
+----PARA PODER DEPURAR HAY QUE IR AL CMD Y PONER gcc -g "" -o ""
+
+1.- "list 1,60" para ver todo el codigo
+2.- "break" para poner un punto de ruptura
+3.- "run" para ejecutar el sistema (si no esta ejecutando el sistema da error el print)
+4.- "print variable" para ver el valor de la variable
+5.- "next" para ver la siguiente linea
+
